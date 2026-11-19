@@ -29,120 +29,45 @@
       </div>
 
       <div class="hero-visual">
-        <!-- 横並び版（PC・タブレット） -->
-        <svg class="hv-wide" viewBox="0 0 900 400" role="img" aria-labelledby="heroVisualTitle heroVisualDesc" xmlns="http://www.w3.org/2000/svg">
-          <title id="heroVisualTitle">前者と後者、認識の仕組みの違い</title>
-          <desc id="heroVisualDesc">前者はいくつもの盤面を俯瞰するモニター視点で全体がつながって見える。後者は自分を起点にした光源視点で、見ている先は一方向、そして地下に自分だけの世界（マイホーム）を持つ。</desc>
-          <style>
-            .hv-zen-line{stroke:var(--accent); stroke-width:2;}
-            .hv-zen-fill{fill:var(--accent);}
-            .hv-zen-soft{fill:var(--accent-soft); stroke:var(--accent); stroke-width:1.5;}
-            .hv-ko-line{stroke:var(--accent2); stroke-width:2;}
-            .hv-ko-fill{fill:var(--accent2);}
-            .hv-ko-soft{fill:var(--accent2-soft); stroke:var(--accent2); stroke-width:1.5;}
-            .hv-muted{stroke:var(--text-muted); opacity:.5;}
-            .hv-label{font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif; font-weight:700; fill:var(--text); font-size:22px;}
-            .hv-sub{font-family:"Noto Sans JP",sans-serif; fill:var(--text-muted); font-size:13px;}
-          </style>
-
-          <line x1="450" y1="30" x2="450" y2="360" class="hv-muted" stroke-dasharray="4 6"/>
-
-          <!-- ===== 前者：モニター視点（左） ===== -->
-          <g>
-            <circle cx="150" cy="38" r="10" class="hv-zen-soft"/>
-            <path d="M150 50 L150 68" class="hv-zen-line"/>
-            <polygon points="60,108 260,108 230,148 30,148" class="hv-zen-soft"/>
-            <polygon points="100,168 320,168 285,213 65,213" class="hv-zen-soft"/>
-            <circle cx="110" cy="126" r="6" class="hv-zen-fill"/>
-            <circle cx="180" cy="122" r="6" class="hv-zen-fill"/>
-            <circle cx="140" cy="188" r="6" class="hv-zen-fill"/>
-            <circle cx="230" cy="184" r="6" class="hv-zen-fill"/>
-            <circle cx="270" cy="193" r="6" class="hv-zen-fill"/>
-            <path d="M116 126 L174 122 M145 186 L224 184 M224 184 L264 192" class="hv-zen-line" fill="none"/>
-            <g transform="translate(75,232)">
-              <circle cx="0" cy="0" r="14" class="hv-zen-fill"/>
-              <path d="M-16 48 Q0 20 16 48 Z" class="hv-zen-fill"/>
+        <div class="hv-card hv-zen">
+          <svg class="hv-icon" viewBox="0 0 120 120" role="img" aria-labelledby="hvZenTitle" xmlns="http://www.w3.org/2000/svg">
+            <title id="hvZenTitle">前者のモニター視点：盤面全体が網目状につながっている</title>
+            <rect x="10" y="10" width="100" height="100" rx="16" class="hv-frame"/>
+            <g class="hv-mesh">
+              <line x1="34" y1="38" x2="86" y2="30"/>
+              <line x1="86" y1="30" x2="90" y2="78"/>
+              <line x1="90" y1="78" x2="40" y2="86"/>
+              <line x1="40" y1="86" x2="34" y2="38"/>
+              <line x1="34" y1="38" x2="90" y2="78"/>
+              <line x1="60" y1="60" x2="86" y2="30"/>
+              <line x1="60" y1="60" x2="40" y2="86"/>
             </g>
-            <line x1="88" y1="220" x2="105" y2="198" class="hv-zen-line" stroke-dasharray="3 5"/>
-            <text x="225" y="335" text-anchor="middle" class="hv-label">前者</text>
-            <text x="225" y="357" text-anchor="middle" class="hv-sub">モニター視点：全体がつながって見える</text>
-          </g>
+            <circle cx="34" cy="38" r="6" class="hv-node"/>
+            <circle cx="86" cy="30" r="6" class="hv-node"/>
+            <circle cx="90" cy="78" r="6" class="hv-node"/>
+            <circle cx="40" cy="86" r="6" class="hv-node"/>
+            <circle cx="60" cy="60" r="6" class="hv-node hv-node-strong"/>
+          </svg>
+          <h3>前者 — モニター視点</h3>
+          <p>盤の上から見ているように、全体が常につながって見える。自分もその関係性の中の一つ。</p>
+        </div>
 
-          <!-- ===== 後者：光源視点（右） ===== -->
-          <g>
-            <g transform="translate(622,135)">
-              <circle cx="0" cy="0" r="14" class="hv-ko-fill"/>
-              <path d="M-16 48 Q0 20 16 48 Z" class="hv-ko-fill"/>
-            </g>
-            <polygon points="636,135 755,98 755,172" class="hv-ko-soft"/>
-            <circle cx="755" cy="135" r="7" class="hv-ko-fill"/>
-
-            <path d="M598 183 Q598 222 610 248 L640 248 Q652 222 652 183 Z" class="hv-ko-soft"/>
-            <g transform="translate(624,268)">
-              <circle cx="0" cy="0" r="10" class="hv-ko-fill"/>
-              <path d="M-11 33 Q0 14 11 33 Z" class="hv-ko-fill"/>
-            </g>
-            <text x="630" y="335" text-anchor="middle" class="hv-label">後者</text>
-            <text x="630" y="357" text-anchor="middle" class="hv-sub">光源視点：自分起点＋地下に「マイホーム」</text>
-          </g>
-        </svg>
-
-        <!-- 縦積み版（スマホ） -->
-        <svg class="hv-stack" viewBox="0 0 420 600" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-          <style>
-            .hv-zen-line{stroke:var(--accent); stroke-width:2.2;}
-            .hv-zen-fill{fill:var(--accent);}
-            .hv-zen-soft{fill:var(--accent-soft); stroke:var(--accent); stroke-width:1.6;}
-            .hv-ko-line{stroke:var(--accent2); stroke-width:2.2;}
-            .hv-ko-fill{fill:var(--accent2);}
-            .hv-ko-soft{fill:var(--accent2-soft); stroke:var(--accent2); stroke-width:1.6;}
-            .hv-muted{stroke:var(--text-muted); opacity:.5;}
-            .hv-label{font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif; font-weight:700; fill:var(--text); font-size:24px;}
-            .hv-sub{font-family:"Noto Sans JP",sans-serif; fill:var(--text-muted); font-size:15px;}
-          </style>
-
-          <!-- 前者（上） -->
-          <g>
-            <circle cx="210" cy="30" r="11" class="hv-zen-soft"/>
-            <path d="M210 43 L210 62" class="hv-zen-line"/>
-            <polygon points="90,100 330,100 295,145 55,145" class="hv-zen-soft"/>
-            <polygon points="120,160 360,160 322,208 82,208" class="hv-zen-soft"/>
-            <circle cx="140" cy="120" r="7" class="hv-zen-fill"/>
-            <circle cx="230" cy="116" r="7" class="hv-zen-fill"/>
-            <circle cx="165" cy="182" r="7" class="hv-zen-fill"/>
-            <circle cx="270" cy="178" r="7" class="hv-zen-fill"/>
-            <path d="M148 120 L222 116 M173 180 L262 178" class="hv-zen-line" fill="none"/>
-            <g transform="translate(110,230)">
-              <circle cx="0" cy="0" r="16" class="hv-zen-fill"/>
-              <path d="M-18 54 Q0 22 18 54 Z" class="hv-zen-fill"/>
-            </g>
-            <line x1="126" y1="216" x2="150" y2="192" class="hv-zen-line" stroke-dasharray="3 5"/>
-            <text x="210" y="305" text-anchor="middle" class="hv-label">前者</text>
-            <text x="210" y="330" text-anchor="middle" class="hv-sub">モニター視点：全体がつながって見える</text>
-          </g>
-
-          <line x1="30" y1="360" x2="390" y2="360" class="hv-muted" stroke-dasharray="4 6"/>
-
-          <!-- 後者（下） -->
-          <g>
-            <g transform="translate(150,415)">
-              <circle cx="0" cy="0" r="16" class="hv-ko-fill"/>
-              <path d="M-18 54 Q0 22 18 54 Z" class="hv-ko-fill"/>
-            </g>
-            <polygon points="168,415 300,378 300,452" class="hv-ko-soft"/>
-            <circle cx="300" cy="415" r="8" class="hv-ko-fill"/>
-
-            <path d="M122 467 Q122 500 132 520 L168 520 Q178 500 178 467 Z" class="hv-ko-soft"/>
-            <g transform="translate(150,538)">
-              <circle cx="0" cy="0" r="11" class="hv-ko-fill"/>
-            </g>
-          </g>
-          <text x="210" y="572" text-anchor="middle" class="hv-label">後者</text>
-          <text x="210" y="593" text-anchor="middle" class="hv-sub">光源視点：自分起点＋地下に「マイホーム」</text>
-        </svg>
-
-        <p class="hero-visual-caption">くわしくは <a href="/view/">認知のパターン</a>・<a href="/dimension/">意識のパターン</a> へ</p>
+        <div class="hv-card hv-ko">
+          <svg class="hv-icon" viewBox="0 0 120 120" role="img" aria-labelledby="hvKoTitle" xmlns="http://www.w3.org/2000/svg">
+            <title id="hvKoTitle">後者の光源視点：自分起点の一方向の光と、内側のマイホーム</title>
+            <rect x="10" y="10" width="100" height="100" rx="16" class="hv-frame"/>
+            <path d="M40 46 L96 30 L96 62 Z" class="hv-beam"/>
+            <circle cx="96" cy="46" r="4" class="hv-node"/>
+            <circle cx="40" cy="46" r="9" class="hv-node hv-node-strong"/>
+            <circle cx="33" cy="80" r="14" class="hv-home"/>
+            <path d="M28 80 L33 75 L38 80 M33 75 L33 86" class="hv-home-mark"/>
+            <path d="M39 55 L35 68" class="hv-link"/>
+          </svg>
+          <h3>後者 — 光源視点</h3>
+          <p>自分を起点に、一方向だけを照らす。外の世界と、自分だけの「マイホーム」を行き来している。</p>
+        </div>
       </div>
+      <p class="hero-visual-caption">くわしくは <a href="/view/">認知のパターン</a>・<a href="/dimension/">意識のパターン</a> へ</p>
     </div>
   </section>
 
