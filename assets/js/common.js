@@ -59,6 +59,29 @@
       .catch(function () {});
   }
 
+  function initReveal() {
+    var items = document.querySelectorAll('.reveal');
+    if (!items.length) return;
+    // 安全策：IO非対応・JS遅延・テスト環境などでも最終的には必ず表示する
+    var fallback = setTimeout(function () {
+      items.forEach(function (el) { el.classList.add('in'); });
+    }, 1800);
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('in'); });
+      clearTimeout(fallback);
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     loadPartial('site-header-slot', 'header.html', function () {
       initNavToggle();
@@ -69,5 +92,6 @@
       var y = document.getElementById('footer-year');
       if (y) y.textContent = new Date().getFullYear();
     });
+    initReveal();
   });
 })();
