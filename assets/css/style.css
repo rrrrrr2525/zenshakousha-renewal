@@ -103,6 +103,8 @@ li{margin-bottom:.4em;}
 .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));}
 .brand:hover{text-decoration:none;}
 
+.nav-right{display:flex; align-items:center; gap:10px; position:relative;}
+
 /* ハンバーガーメニューに統一（PC/スマホ共通） */
 .menu-toggle{
   display:inline-flex; align-items:center; justify-content:center; gap:7px;
@@ -113,7 +115,7 @@ li{margin-bottom:.4em;}
 .menu-toggle .bars span{width:18px; height:2px; background:currentColor; border-radius:2px; display:block;}
 
 nav.main-nav{
-  display:none; position:absolute; top:calc(100% + 8px); right:20px;
+  display:none; position:absolute; top:calc(100% + 8px); right:0;
   background:var(--bg-elevated); border:1px solid var(--border);
   border-radius:var(--radius); box-shadow:var(--shadow-lg);
   padding:10px; width:300px; max-width:calc(100vw - 32px); max-height:80vh; overflow-y:auto;
@@ -137,7 +139,7 @@ nav.main-nav a.top-link:hover, nav.main-nav a.top-link.active{
 .dropdown a:hover{background:var(--accent-soft); color:var(--accent); text-decoration:none;}
 
 @media (max-width: 560px){
-  nav.main-nav{right:12px; width:calc(100vw - 24px);}
+  nav.main-nav{right:0; width:calc(100vw - 24px);}
 }
 
 /* ---------- Hero (LP style) ---------- */
