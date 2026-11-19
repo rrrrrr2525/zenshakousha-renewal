@@ -191,6 +191,16 @@ nav.main-nav a.top-link:hover, nav.main-nav a.top-link.active{
   .cta-banner{padding:40px 20px; border-radius:18px;}
 }
 
+.hero-visual{max-width:720px; margin:0 auto 8px;}
+.hero-visual svg{width:100%; height:auto; display:block;}
+.hero-visual .hv-stack{display:none; max-width:320px; margin:0 auto;}
+.hero-visual-caption{text-align:center; font-size:.82rem; color:var(--text-muted); margin:10px 0 0;}
+
+@media (max-width: 680px){
+  .hero-visual .hv-wide{display:none;}
+  .hero-visual .hv-stack{display:block;}
+}
+
 /* ---------- LP sections ---------- */
 .eyebrow-center{text-align:center; margin-bottom:8px;}
 .section-title{text-align:center; border:none; margin-bottom:10px;}
