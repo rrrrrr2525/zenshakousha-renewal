@@ -191,33 +191,49 @@ nav.main-nav a.top-link:hover, nav.main-nav a.top-link.active{
   .cta-banner{padding:40px 20px; border-radius:18px;}
 }
 
-.hero-visual{
-  display:grid; grid-template-columns:1fr 1fr; gap:18px;
-  max-width:640px; margin:0 auto; text-align:left;
+.hero-visual-single{
+  max-width:760px; margin:0 auto; background:var(--bg-elevated); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow-lg); padding:18px 18px 8px;
+  overflow-x:auto;
 }
-.hv-card{
-  background:var(--bg-elevated); border:1px solid var(--border); border-radius:var(--radius);
-  box-shadow:var(--shadow-lg); padding:20px 20px 22px;
+.hv-diagram{width:100%; height:auto; display:block;}
+
+@media (max-width: 640px){
+  .hv-diagram{width:640px; max-width:none;}
 }
-.hv-card h3{font-size:.98rem; margin:4px 0 6px; color:var(--text);}
-.hv-card p{font-size:.82rem; color:var(--text-muted); margin:0; line-height:1.65;}
-.hv-icon{width:76px; height:76px; display:block; margin-bottom:6px;}
-.hv-frame{fill:none; stroke:var(--border); stroke-width:2;}
-.hv-zen .hv-mesh line{stroke:var(--accent); stroke-width:1.6; opacity:.55;}
-.hv-zen .hv-node{fill:var(--accent);}
-.hv-zen .hv-node-strong{fill:var(--accent); stroke:var(--accent-soft); stroke-width:4;}
-.hv-ko .hv-beam{fill:var(--accent2); opacity:.22;}
-.hv-ko .hv-node{fill:var(--accent2);}
-.hv-ko .hv-node-strong{fill:var(--accent2); stroke:var(--accent2-soft); stroke-width:4;}
-.hv-ko .hv-home{fill:var(--accent2-soft); stroke:var(--accent2); stroke-width:1.6; stroke-dasharray:3 3;}
-.hv-ko .hv-home-mark{fill:none; stroke:var(--accent2); stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;}
-.hv-ko .hv-link{stroke:var(--accent2); stroke-width:1.6; opacity:.5; stroke-dasharray:2 3;}
+.hv-divider{stroke:var(--border); stroke-width:2;}
+.hv-arrowhead-zen{fill:var(--accent);}
+.hv-arrowhead-ko{fill:var(--accent2);}
+
+.hv-zen .hv-plane{fill:var(--accent-soft); stroke:var(--accent); stroke-width:1.5; opacity:.8;}
+.hv-zen .hv-arrows path{stroke:var(--accent); stroke-width:2;}
+.hv-zen .hv-arrows-out path{stroke:var(--accent); stroke-width:1.6; opacity:.55;}
+.hv-zen .hv-figure{fill:var(--accent);}
+.hv-zen .hv-figure-main{fill:var(--accent);}
+.hv-zen .hv-tag{fill:var(--accent);}
+
+.hv-ko .hv-spot-outer{fill:var(--accent2); opacity:.14;}
+.hv-ko .hv-spot-inner{fill:var(--accent2); opacity:.28;}
+.hv-ko .hv-arrows path{stroke:var(--accent2); stroke-width:2;}
+.hv-ko .hv-figure{fill:var(--accent2); opacity:.55;}
+.hv-ko .hv-figure-main{opacity:1;}
+.hv-ko .hv-figure-lit{opacity:1;}
+.hv-ko .hv-tag{fill:var(--accent2);}
+
+.hv-tag-text{
+  font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif; font-weight:700; font-size:26px;
+  fill:#fff; dominant-baseline:middle;
+}
+.hv-caption{font-family:"Noto Sans JP",sans-serif; font-size:15px; fill:var(--text-muted);}
 
 .hero-visual-caption{text-align:center; font-size:.82rem; color:var(--text-muted); margin:14px 0 0;}
+.hv-scroll-hint{display:none; font-size:.76rem; margin:10px 0 0;}
+@media (max-width: 640px){
+  .hv-scroll-hint{display:block;}
+}
 
-@media (max-width: 560px){
-  .hero-visual{grid-template-columns:1fr; gap:14px; max-width:360px;}
-  .hv-card{padding:18px;}
+@media (max-width: 680px){
+  .hv-caption{font-size:19px;}
 }
 
 /* ---------- LP sections ---------- */

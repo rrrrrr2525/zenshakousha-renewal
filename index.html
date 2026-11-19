@@ -28,45 +28,85 @@
         <div><strong>2016〜</strong>研究・発信を継続中</div>
       </div>
 
-      <div class="hero-visual">
-        <div class="hv-card hv-zen">
-          <svg class="hv-icon" viewBox="0 0 120 120" role="img" aria-labelledby="hvZenTitle" xmlns="http://www.w3.org/2000/svg">
-            <title id="hvZenTitle">前者のモニター視点：盤面全体が網目状につながっている</title>
-            <rect x="10" y="10" width="100" height="100" rx="16" class="hv-frame"/>
-            <g class="hv-mesh">
-              <line x1="34" y1="38" x2="86" y2="30"/>
-              <line x1="86" y1="30" x2="90" y2="78"/>
-              <line x1="90" y1="78" x2="40" y2="86"/>
-              <line x1="40" y1="86" x2="34" y2="38"/>
-              <line x1="34" y1="38" x2="90" y2="78"/>
-              <line x1="60" y1="60" x2="86" y2="30"/>
-              <line x1="60" y1="60" x2="40" y2="86"/>
-            </g>
-            <circle cx="34" cy="38" r="6" class="hv-node"/>
-            <circle cx="86" cy="30" r="6" class="hv-node"/>
-            <circle cx="90" cy="78" r="6" class="hv-node"/>
-            <circle cx="40" cy="86" r="6" class="hv-node"/>
-            <circle cx="60" cy="60" r="6" class="hv-node hv-node-strong"/>
-          </svg>
-          <h3>前者 — モニター視点</h3>
-          <p>盤の上から見ているように、全体が常につながって見える。自分もその関係性の中の一つ。</p>
-        </div>
+      <div class="hero-visual hero-visual-single">
+        <svg class="hv-diagram" viewBox="0 0 1000 480" role="img" aria-labelledby="hvTitle hvDesc" xmlns="http://www.w3.org/2000/svg">
+          <title id="hvTitle">前者と後者、人との関係の見え方の違い</title>
+          <desc id="hvDesc">前者は盤の上でみんなが矢印でつながっている網目状の関係。後者は自分を中心に一人ひとりとつながり、そのうち一方向だけが強いスポットライトで照らされている。</desc>
+          <defs>
+            <symbol id="hvPerson" viewBox="0 0 24 34">
+              <circle cx="12" cy="6.5" r="6.5"/>
+              <path d="M12 15c-6 0-10.5 4.8-10.5 10.5V34h21v-8.5C22.5 19.8 18 15 12 15z"/>
+            </symbol>
+            <marker id="hvArrowZen" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+              <path d="M0,0 L7,3.5 L0,7 Z" class="hv-arrowhead-zen"/>
+            </marker>
+            <marker id="hvArrowKo" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+              <path d="M0,0 L7,3.5 L0,7 Z" class="hv-arrowhead-ko"/>
+            </marker>
+          </defs>
 
-        <div class="hv-card hv-ko">
-          <svg class="hv-icon" viewBox="0 0 120 120" role="img" aria-labelledby="hvKoTitle" xmlns="http://www.w3.org/2000/svg">
-            <title id="hvKoTitle">後者の光源視点：自分起点の一方向の光と、内側のマイホーム</title>
-            <rect x="10" y="10" width="100" height="100" rx="16" class="hv-frame"/>
-            <path d="M40 46 L96 30 L96 62 Z" class="hv-beam"/>
-            <circle cx="96" cy="46" r="4" class="hv-node"/>
-            <circle cx="40" cy="46" r="9" class="hv-node hv-node-strong"/>
-            <circle cx="33" cy="80" r="14" class="hv-home"/>
-            <path d="M28 80 L33 75 L38 80 M33 75 L33 86" class="hv-home-mark"/>
-            <path d="M39 55 L35 68" class="hv-link"/>
-          </svg>
-          <h3>後者 — 光源視点</h3>
-          <p>自分を起点に、一方向だけを照らす。外の世界と、自分だけの「マイホーム」を行き来している。</p>
-        </div>
+          <line x1="500" y1="20" x2="500" y2="460" class="hv-divider"/>
+
+          <!-- ===== 前者：網目状につながる盤 ===== -->
+          <g class="hv-zen">
+            <polygon points="70,150 400,140 365,300 35,290" class="hv-plane"/>
+
+            <!-- 全員が互いにつながる矢印 -->
+            <g class="hv-arrows" fill="none" marker-end="url(#hvArrowZen)">
+              <path d="M150 165 L300 155"/>
+              <path d="M300 155 L220 215"/>
+              <path d="M220 215 L150 165"/>
+              <path d="M220 215 L120 250"/>
+              <path d="M220 215 L310 255"/>
+              <path d="M120 250 L310 255"/>
+              <path d="M150 165 L120 250"/>
+              <path d="M300 155 L310 255"/>
+            </g>
+            <!-- 外にも開いている（盤の外へのつながり） -->
+            <g class="hv-arrows-out" fill="none" marker-end="url(#hvArrowZen)">
+              <path d="M150 165 L95 105"/>
+              <path d="M300 155 L355 100"/>
+              <path d="M120 250 L55 290"/>
+              <path d="M310 255 L370 305"/>
+            </g>
+
+            <use href="#hvPerson" x="132" y="135" width="36" height="51" class="hv-figure"/>
+            <use href="#hvPerson" x="282" y="125" width="36" height="51" class="hv-figure"/>
+            <use href="#hvPerson" x="202" y="186" width="36" height="51" class="hv-figure hv-figure-main"/>
+            <use href="#hvPerson" x="100" y="222" width="36" height="51" class="hv-figure"/>
+            <use href="#hvPerson" x="292" y="227" width="36" height="51" class="hv-figure"/>
+
+            <rect x="30" y="400" width="70" height="46" rx="8" class="hv-tag"/>
+            <text x="65" y="432" text-anchor="middle" class="hv-tag-text">前</text>
+            <text x="220" y="412" text-anchor="middle" class="hv-caption">全員が矢印でつながって見える</text>
+          </g>
+
+          <!-- ===== 後者：自分中心＋一方向の光 ===== -->
+          <g class="hv-ko">
+            <!-- スポットライト（一方向だけ強い） -->
+            <polygon points="660,320 780,40 900,90" class="hv-spot-outer"/>
+            <polygon points="660,320 790,110 850,150" class="hv-spot-inner"/>
+
+            <g class="hv-arrows" fill="none" marker-end="url(#hvArrowKo)">
+              <path d="M660 320 L600 165"/>
+              <path d="M660 320 L820 290"/>
+              <path d="M660 320 L560 260"/>
+              <path d="M660 320 L800 150"/>
+            </g>
+
+            <use href="#hvPerson" x="580" y="130" width="34" height="48" class="hv-figure"/>
+            <use href="#hvPerson" x="780" y="115" width="34" height="48" class="hv-figure hv-figure-lit"/>
+            <use href="#hvPerson" x="540" y="228" width="34" height="48" class="hv-figure"/>
+            <use href="#hvPerson" x="800" y="258" width="34" height="48" class="hv-figure"/>
+            <use href="#hvPerson" x="642" y="292" width="40" height="56" class="hv-figure hv-figure-main"/>
+
+            <rect x="900" y="400" width="70" height="46" rx="8" class="hv-tag"/>
+            <text x="935" y="432" text-anchor="middle" class="hv-tag-text">後</text>
+            <text x="770" y="412" text-anchor="middle" class="hv-caption">自分起点、強く見えるのは一方向だけ</text>
+          </g>
+        </svg>
       </div>
+      <p class="hero-visual-caption hv-scroll-hint">← 横にスクロールできます →</p>
       <p class="hero-visual-caption">くわしくは <a href="/view/">認知のパターン</a>・<a href="/dimension/">意識のパターン</a> へ</p>
     </div>
   </section>
