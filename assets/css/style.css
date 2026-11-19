@@ -103,41 +103,41 @@ li{margin-bottom:.4em;}
 .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));}
 .brand:hover{text-decoration:none;}
 
-nav.main-nav{display:flex; gap:4px; flex-wrap:wrap;}
-nav.main-nav > .nav-item{position:relative;}
+/* ハンバーガーメニューに統一（PC/スマホ共通） */
+.menu-toggle{
+  display:inline-flex; align-items:center; justify-content:center; gap:7px;
+  background:none; border:1px solid var(--border); border-radius:999px; padding:9px 16px;
+  font-size:.88rem; font-weight:700; color:var(--text); cursor:pointer;
+}
+.menu-toggle .bars{display:inline-flex; flex-direction:column; gap:3px;}
+.menu-toggle .bars span{width:18px; height:2px; background:currentColor; border-radius:2px; display:block;}
+
+nav.main-nav{
+  display:none; position:absolute; top:calc(100% + 8px); right:20px;
+  background:var(--bg-elevated); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow-lg);
+  padding:10px; width:300px; max-width:calc(100vw - 32px); max-height:80vh; overflow-y:auto;
+  flex-direction:column; gap:2px;
+}
+nav.main-nav.open{display:flex;}
+nav.main-nav > .nav-item{position:static;}
 nav.main-nav a.top-link{
-  display:inline-block; padding:8px 12px; border-radius:999px;
-  color:var(--text); font-size:.92rem; font-weight:500;
+  display:block; padding:11px 12px; border-radius:10px;
+  color:var(--text); font-size:.96rem; font-weight:700;
 }
 nav.main-nav a.top-link:hover, nav.main-nav a.top-link.active{
   background:var(--accent-soft); color:var(--accent); text-decoration:none;
 }
 .nav-item .dropdown{
-  display:none; position:absolute; top:110%; left:0;
-  background:var(--bg-elevated); border:1px solid var(--border);
-  border-radius:var(--radius-sm); box-shadow:var(--shadow-lg);
-  padding:8px; min-width:220px; max-height:70vh; overflow-y:auto;
+  display:none; position:static; border:none; box-shadow:none;
+  padding:0 0 6px 14px; margin-top:-2px;
 }
-.nav-item:hover .dropdown, .nav-item:focus-within .dropdown{display:block;}
-.dropdown a{display:block; padding:7px 10px; border-radius:8px; font-size:.88rem; color:var(--text);}
+.nav-item.open .dropdown{display:block;}
+.dropdown a{display:block; padding:7px 10px; border-radius:8px; font-size:.86rem; color:var(--text-muted);}
 .dropdown a:hover{background:var(--accent-soft); color:var(--accent); text-decoration:none;}
 
-.menu-toggle{display:none; background:none; border:1px solid var(--border); border-radius:8px; padding:8px 10px; font-size:1.1rem; color:var(--text); cursor:pointer;}
-
-@media (max-width: 860px){
-  .menu-toggle{display:inline-block;}
-  nav.main-nav{
-    display:none; position:fixed; inset:60px 0 0 0; background:var(--bg);
-    flex-direction:column; align-items:stretch; padding:10px 16px; overflow-y:auto;
-    gap:2px;
-  }
-  nav.main-nav.open{display:flex;}
-  .nav-item .dropdown{
-    display:block; position:static; border:none; box-shadow:none; padding:0 0 0 14px; margin-bottom:6px;
-  }
-  .nav-item .dropdown:not(.force-open){display:none;}
-  .nav-item.open .dropdown{display:block;}
-  nav.main-nav a.top-link{width:100%;}
+@media (max-width: 560px){
+  nav.main-nav{right:12px; width:calc(100vw - 24px);}
 }
 
 /* ---------- Hero (LP style) ---------- */
