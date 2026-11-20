@@ -339,6 +339,21 @@ nav.main-nav a.top-link:hover, nav.main-nav a.top-link.active{
 .section.alt{background:var(--bg-elevated); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
 
 .page-content{padding:32px 0 70px;}
+
+.page-figure{
+  margin:28px 0; background:var(--bg-elevated); border:1px solid var(--border);
+  border-radius:var(--radius); padding:18px; box-shadow:var(--shadow);
+}
+.page-figure img{display:block; margin:0 auto; border-radius:var(--radius-sm); max-width:100%; height:auto;}
+.page-figure figcaption{text-align:center; font-size:.84rem; color:var(--text-muted); margin-top:12px;}
+.page-figure.wide{max-width:none;}
+.page-figure.inline-pair{display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:end;}
+.page-figure.inline-pair .cell{text-align:center;}
+.page-figure.inline-pair .cell img{margin:0 auto;}
+.page-figure.inline-pair .cell span{display:block; font-size:.82rem; color:var(--text-muted); margin-top:8px;}
+@media (max-width:560px){
+  .page-figure.inline-pair{grid-template-columns:1fr;}
+}
 .breadcrumb{font-size:.82rem; color:var(--text-muted); margin-bottom:18px;}
 .breadcrumb a{color:var(--text-muted);}
 
