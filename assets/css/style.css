@@ -54,33 +54,6 @@
   --shadow-lg: 0 12px 32px rgba(0,0,0,0.45);
 }
 
-/* ---------- お試し配色：前者=青／後者=オレンジ（トップページのみ） ---------- */
-body.palette-blue-orange{
-  --accent: #3a66e0;       /* 青: 前者 */
-  --accent-soft: #e7edfc;
-  --accent2: #e8822f;      /* オレンジ: 後者 */
-  --accent2-soft: #fdecdd;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]) body.palette-blue-orange{
-    --accent: #7fa4ff;
-    --accent-soft: #212d49;
-    --accent2: #ffab6b;
-    --accent2-soft: #3a2a1c;
-  }
-}
-:root[data-theme="dark"] body.palette-blue-orange{
-  --accent: #7fa4ff;
-  --accent-soft: #212d49;
-  --accent2: #ffab6b;
-  --accent2-soft: #3a2a1c;
-}
-/* グラデーションの2色目がハードコードされている箇所も、お試し配色に合わせる */
-body.palette-blue-orange .hero-emblem .zen{background:linear-gradient(135deg,var(--accent),#6a93ff);}
-body.palette-blue-orange .hero-emblem .ko{background:linear-gradient(135deg,var(--accent2),#ffb46b);}
-body.palette-blue-orange .type-card.zensha .badge{background:linear-gradient(135deg,var(--accent),#6a93ff);}
-body.palette-blue-orange .type-card.kosha .badge{background:linear-gradient(135deg,var(--accent2),#ffb46b);}
-
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
