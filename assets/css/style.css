@@ -160,15 +160,16 @@ nav.main-nav a.top-link:hover, nav.main-nav a.top-link.active{
   display:inline-block; font-size:.8rem; font-weight:700; letter-spacing:.08em;
   color:var(--accent2); background:var(--accent2-soft); padding:5px 14px; border-radius:999px; margin-bottom:20px;
 }
-.hero .split-icon{
-  display:flex; justify-content:center; gap:0; margin:0 auto 24px; width:fit-content;
+.hero-emblem{
+  display:flex; width:116px; height:116px; margin:0 auto 26px; border-radius:50%;
+  overflow:hidden; box-shadow:var(--shadow-lg); border:3px solid var(--bg-elevated);
 }
-.hero .split-icon span{
-  width:44px; height:44px; display:flex; align-items:center; justify-content:center;
-  font-family:"Zen Maru Gothic",sans-serif; font-weight:700; font-size:1.05rem; color:#fff;
+.hero-emblem .half{
+  flex:1; display:flex; align-items:center; justify-content:center;
+  font-family:"Zen Maru Gothic",sans-serif; font-weight:700; font-size:1.9rem; color:#fff;
 }
-.hero .split-icon span:first-child{background:var(--accent); border-radius:999px 0 0 999px;}
-.hero .split-icon span:last-child{background:var(--accent2); border-radius:0 999px 999px 0;}
+.hero-emblem .zen{background:linear-gradient(135deg,var(--accent),#8f7ef0);}
+.hero-emblem .ko{background:linear-gradient(135deg,var(--accent2),#4fd8cd);}
 .hero h1{margin-bottom:.5em; font-size:clamp(1.9rem,5.2vw,2.9rem); letter-spacing:-.01em;}
 .hero h1 .hl{
   background:linear-gradient(90deg,var(--accent),var(--accent2));
@@ -313,6 +314,7 @@ nav.main-nav a.top-link:hover, nav.main-nav a.top-link.active{
 .btn.ghost{background:transparent; color:var(--text); border:1px solid var(--border);}
 .btn.warm{background:var(--warm);}
 .btn[disabled]{opacity:.4; cursor:not-allowed;}
+.btn.btn-lg{padding:17px 36px; font-size:1.08rem;}
 
 .card-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin:28px 0;}
 .card{
