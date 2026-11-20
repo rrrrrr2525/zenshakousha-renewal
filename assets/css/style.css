@@ -80,6 +80,14 @@ body.palette-blue-orange .hero-emblem .zen{background:linear-gradient(135deg,var
 body.palette-blue-orange .hero-emblem .ko{background:linear-gradient(135deg,var(--accent2),#ffb46b);}
 body.palette-blue-orange .type-card.zensha .badge{background:linear-gradient(135deg,var(--accent),#6a93ff);}
 body.palette-blue-orange .type-card.kosha .badge{background:linear-gradient(135deg,var(--accent2),#ffb46b);}
+/* 「前者後者論×脳タイプ9」の見出しピルは、前者=青/後者=オレンジどちらの専用色でもないので
+   「倍になる。」のグラデーションと同じ青→ピンクのテキストグラデーションにする（オレンジは使わない） */
+body.palette-blue-orange .hero .eyebrow{background:var(--accent-soft); color:transparent;}
+body.palette-blue-orange .hero .eyebrow-text{
+  background-image:linear-gradient(90deg,var(--accent),#e0538a);
+  background-image:linear-gradient(90deg in oklch,var(--accent),#e0538a);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
 
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
