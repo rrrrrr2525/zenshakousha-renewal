@@ -142,6 +142,27 @@ nav.main-nav a.top-link:hover, nav.main-nav a.top-link.active{
   nav.main-nav{right:0; width:calc(100vw - 24px);}
 }
 
+/* PCの横幅が十分あるときは、ハンバーガーをやめて横並びナビ＋ホバーで展開 */
+@media (min-width: 980px){
+  .menu-toggle{display:none;}
+  nav.main-nav{
+    display:flex; position:static; flex-direction:row; align-items:center;
+    background:none; border:none; box-shadow:none;
+    padding:0; width:auto; max-width:none; max-height:none; overflow:visible; gap:2px;
+  }
+  nav.main-nav > .nav-item{position:relative;}
+  nav.main-nav a.top-link{
+    padding:9px 13px; border-radius:999px; font-size:.86rem; white-space:nowrap;
+  }
+  .nav-item .dropdown{
+    display:none; position:absolute; top:calc(100% + 8px); left:0;
+    background:var(--bg-elevated); border:1px solid var(--border); border-radius:var(--radius);
+    box-shadow:var(--shadow-lg); padding:8px; width:230px; margin-top:0;
+  }
+  .nav-item.open .dropdown, .nav-item:hover .dropdown{display:block;}
+  .dropdown a{color:var(--text-muted); font-size:.87rem;}
+}
+
 /* ---------- Hero (LP style) ---------- */
 .hero{
   position:relative; padding:76px 0 56px; text-align:center; overflow:hidden;

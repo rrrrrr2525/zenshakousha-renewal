@@ -34,8 +34,11 @@
       btn.setAttribute('aria-expanded', String(willOpen));
     });
 
+    var isDesktopNav = window.matchMedia('(min-width: 980px)');
     nav.querySelectorAll('.nav-item > a.top-link').forEach(function (a) {
       a.addEventListener('click', function (e) {
+        // PCの横並びナビではホバーでドロップダウンが出るので、クリックは通常どおりリンク先へ遷移させる
+        if (isDesktopNav.matches) return;
         if (a.parentElement.querySelector('.dropdown')) {
           e.preventDefault();
           var isOpen = a.parentElement.classList.toggle('open');
