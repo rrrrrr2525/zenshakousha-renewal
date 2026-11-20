@@ -394,6 +394,26 @@ th{color:var(--text-muted); font-weight:700;}
 .result-bar-fill.b{background:var(--accent2);}
 .result-bar-row .pct{width:42px; text-align:right; flex-shrink:0;}
 
+/* ---------- Onboarding (はじめての方へ) ---------- */
+.onboard-list{list-style:none; margin:0; padding:0; max-width:680px; margin:0 auto;}
+.onboard-item{
+  display:flex; gap:20px; padding:26px 0; border-bottom:1px solid var(--border);
+}
+.onboard-item:last-child{border-bottom:none;}
+.onboard-num{
+  flex-shrink:0; width:44px; height:44px; border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.1rem;
+  font-family:"Zen Maru Gothic",sans-serif;
+}
+.onboard-body h3{margin-bottom:.3em;}
+.onboard-body p{color:var(--text-muted); font-size:.92rem; margin-bottom:.6em;}
+.onboard-body a{font-weight:700;}
+
+@media (max-width: 480px){
+  .onboard-item{gap:14px;}
+}
+
 /* ---------- Footer ---------- */
 #site-footer{border-top:1px solid var(--border); margin-top:40px; padding:36px 0; color:var(--text-muted); font-size:.85rem;}
 .footer-grid{display:flex; flex-wrap:wrap; gap:28px; justify-content:space-between; margin-bottom:20px;}
