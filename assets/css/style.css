@@ -272,6 +272,36 @@ nav.main-nav a.top-link:hover, nav.main-nav a.top-link.active{
 .step-link:hover{background:var(--bg-elevated); box-shadow:var(--shadow); transform:translateY(-2px); text-decoration:none;}
 .step-link:hover h4{color:var(--accent);}
 
+.hub-card{
+  display:block; text-align:center; margin:44px 0 0; padding:44px 32px;
+  border-radius:28px; border:1px solid var(--border);
+  background:
+    linear-gradient(var(--bg-elevated), var(--bg-elevated)) padding-box,
+    linear-gradient(120deg, var(--accent), var(--accent2)) border-box;
+  border:2px solid transparent;
+  color:var(--text); position:relative; overflow:hidden;
+  box-shadow:var(--shadow-lg); transition:transform .25s ease, box-shadow .25s ease;
+}
+.hub-card:hover{transform:translateY(-3px); box-shadow:0 20px 48px -12px color-mix(in srgb, var(--accent) 35%, transparent); text-decoration:none;}
+.hub-card-eyebrow{
+  display:inline-block; font-size:.8rem; font-weight:700; letter-spacing:.06em;
+  background:linear-gradient(90deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent;
+  margin-bottom:10px;
+}
+.hub-card h3{font-size:clamp(1.25rem,3.2vw,1.6rem); margin-bottom:10px; color:var(--text);}
+.hub-card > p{color:var(--text-muted); max-width:520px; margin:0 auto 22px; font-size:.95rem;}
+.hub-card-pills{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:26px;}
+.hub-card-pills span{
+  padding:6px 14px; border-radius:999px; font-size:.8rem; font-weight:700;
+  background:var(--accent-soft); color:var(--accent); border:1px solid var(--border);
+}
+.hub-card-pills span:nth-child(4), .hub-card-pills span:nth-child(5){background:var(--accent2-soft); color:var(--accent2);}
+.hub-card-btn{background:linear-gradient(120deg,var(--accent),var(--accent2)); color:#fff; pointer-events:none;}
+
+@media (max-width:560px){
+  .hub-card{padding:32px 20px; margin-top:32px;}
+}
+
 .duo-scroll{display:flex; gap:14px; overflow-x:auto; padding:8px 4px 20px; margin:0 -4px; scroll-snap-type:x proximity;}
 .duo-card{
   flex:0 0 auto; width:160px; scroll-snap-align:start; text-align:center;
