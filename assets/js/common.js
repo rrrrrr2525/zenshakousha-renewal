@@ -102,6 +102,31 @@
     items.forEach(function (el) { io.observe(el); });
   }
 
+  function initJumpNav() {
+    var nav = document.querySelector('.jump-nav');
+    if (!nav) return;
+    var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
+    var sections = links
+      .map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); })
+      .filter(Boolean);
+    if (!sections.length || !('IntersectionObserver' in window)) return;
+
+    function setActive(id) {
+      links.forEach(function (a) {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+      var active = nav.querySelector('a.active');
+      if (active) active.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    sections.forEach(function (s) { io.observe(s); });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     loadPartial('site-header-slot', 'header.html', function () {
       initNavToggle();
@@ -113,5 +138,6 @@
       if (y) y.textContent = new Date().getFullYear();
     });
     initReveal();
+    initJumpNav();
   });
 })();
